@@ -41,9 +41,32 @@ print(df2.info())
 # print("Columns : ",  df1.shape[1])
 
 df_merge = pd.merge(df1, df2, how="left")
-print(df1['Country Code'].unique)
+# print(df1['Country Code'].unique)
 
 # NA 
 # Null
 # NaN
 # duplicate
+
+# print(df_merge['Country'] == 'India')
+
+# print(df1[df1['City'] == 'New Delhi'])
+
+# print(df1.columns)
+
+
+# print(df1[(df1['City'] == 'Ghaziabad') & (df1['Rating text'] == 'Poor')])
+
+
+df3 = pd.read_csv("quikr_car.csv", encoding="latin-1")
+# print(df3.info())
+
+# print(df3['Price'] == 'Null')
+
+# print(df3.head())
+
+# print(df3['Price'].unique)
+
+df3 = df3[df3['Price']!= 'Ask For Price']
+df3['Price'] = df3['Price'].str.replace(',', '').astype(int)
+print(df3['Price'])
