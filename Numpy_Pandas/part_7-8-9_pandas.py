@@ -55,7 +55,7 @@ df_merge = pd.merge(df1, df2, how="left")
 # print(df1.columns)
 
 
-# print(df1[(df1['City'] == 'Ghaziabad') & (df1['Rating text'] == 'Poor')])
+# print(df1[(df1['City'] == 'Ghaziabad') & (df1['Rating text'] == 'Excellent')])
 
 
 df3 = pd.read_csv("quikr_car.csv", encoding="latin-1")
@@ -69,4 +69,10 @@ df3 = pd.read_csv("quikr_car.csv", encoding="latin-1")
 
 df3 = df3[df3['Price']!= 'Ask For Price']
 df3['Price'] = df3['Price'].str.replace(',', '').astype(int)
-print(df3['Price'])
+# print(df3['Price'])
+
+
+
+print(df_merge[df_merge['Rating text'] == 'Excellent'], ['Country'].value_counts().head())
+
+
