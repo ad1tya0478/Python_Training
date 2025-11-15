@@ -1,0 +1,241 @@
+
+RELIANCE TRENDS DATA ANALYSIS REPORT
+
+1. DATA CLEANING PERFORMED:
+- Removed spaces in column names
+- Converted price columns to numbers
+- Removed duplicates
+- Removed missing values
+- Created new column: Discount_Percentage
+
+2. SUMMARY:
+Total Products: 31018
+Total Brands: 191
+Total Categories: 9
+
+Top Brands:
+Brand
+performax                3020
+teamspirit               1893
+dnmx                     1742
+netplay                  1684
+avaasa-mix-n-match       1470
+john-players             1206
+hi-attitude              1176
+w                        1142
+fig                      1091
+lee-cooper                916
+ecko                      825
+aurelia                   818
+rio                       740
+john-players-jeans        653
+christofano               525
+schumann                  515
+ajio                      501
+kraus                     476
+biba                      476
+duke                      424
+frisbee                   417
+fusion                    395
+aero-jeans                328
+jdy-by-only               319
+siyahi                    301
+anonymous-co              279
+iscenery-by-vero-moda     275
+sin                       259
+indian-terrain            251
+altheory                  234
+aero-jeans-womens         227
+rangriti                  227
+airwalk                   201
+produkt-by-jack-jones     198
+recap                     197
+avaasa-set                188
+schumann-premium          179
+outryt                    165
+only-vimal-apparel        164
+denizen-from-levis        156
+clarks                    152
+fioni                     147
+altheory-sport            140
+svrnaa                    137
+inblu                     137
+aksk-creation             134
+proline                   131
+ceriz                     124
+u-s-polo-assn-            120
+denizen-womens            117
+madame                    115
+killer                    111
+jockey                    107
+catwalk                   101
+enamor                    101
+uniquest                   98
+poetic-piyani              95
+disney                     86
+hunters-bay                81
+chhabra-555                80
+juniper                    78
+sanlee                     75
+indigo-nation              72
+crimsoune-club             71
+fila                       71
+ipanema                    70
+species                    69
+puma                       68
+nv-bhandar                 65
+woodland                   63
+duke-women-s               63
+umbro                      63
+go-colors                  62
+swadesh                    57
+vivitka                    56
+nez                        54
+cross-trekkers             51
+global-step                49
+brash                      48
+kneetoes                   47
+lee-cooper-women           44
+id                         43
+ecko-unltd                 43
+dfx                        42
+montego-bay-club           40
+buckaroo                   40
+first-class                39
+red-chief                  39
+warner-brothers            38
+viviana                    35
+network                    35
+labella                    34
+comfort-plus               33
+ashmita                    33
+allen-solly                30
+monte-carlo                30
+skechers                   24
+anukta                     24
+avaasa                     23
+crocs                      22
+namah                      21
+basics                     21
+vala-s                     20
+varja                      19
+other-characters           19
+ftwe                       18
+parx                       16
+trends                     15
+attilio                    15
+outryt-sport               14
+ira-soleil                 14
+disha                      14
+city-sneaks                13
+jashn                      13
+lower-east-side            11
+pepe-jeans                 10
+rss                         9
+alberto-torresi             9
+poshaak                     9
+dexter                      9
+teej                        8
+gola                        8
+lag                         8
+egoss                       8
+adidas                      7
+nirali                      7
+zaxy                        7
+louis-philippe              7
+k-swiss                     7
+samav                       6
+jp-jeans                    6
+lucy-vegona                 6
+be-indi                     6
+hushh                       6
+wildcraft                   5
+crimsoune-club-women        4
+christofano-premium         4
+hanes                       4
+reebok                      4
+octave                      4
+chromozome                  4
+mardi-gras                  3
+pureza                      3
+ruosh                       3
+mix-fab                     3
+gaami                       3
+shakuntalam-s               3
+triumph                     3
+awd                         3
+lotto                       3
+hunter-s-bay                3
+florsheim                   3
+109-f                       2
+opt                         2
+monte-bianco                2
+saucony                     2
+monza                       2
+monte-carlo-ladies          2
+onn                         2
+ayaany                      2
+turtle                      2
+john-players-select         2
+enamor-sleepwear            2
+jealous-21                  2
+pal-fashions                2
+flying-machine-womens       2
+graviti                     2
+oxemberg                    2
+nizam                       2
+srm-fashion                 2
+dmi                         2
+hiattitude                  2
+rivaj                       2
+arrow                       1
+integriti                   1
+wrangler                    1
+classic-polo                1
+rimaya                      1
+valentino                   1
+nike                        1
+franco-leone                1
+rugged-outback              1
+hk-colours-of-fashion       1
+urban-style                 1
+mithi-mirchi                1
+jadu                        1
+jublee                      1
+monrow                      1
+bon-bon                     1
+awb                         1
+avaasa-workwear             1
+
+Top Categories:
+Category
+Topwear        6965
+Westernwear    6432
+Footwear       6005
+Ethnicwear     5110
+Bottomwear     2960
+Activewear     2132
+Fusionwear      993
+Lingerie        325
+Innerwear        96
+
+Gender-based Distribution:
+Category_by_gender
+Women    16817
+Men      14201
+
+3. INSIGHTS:
+- Highest discount percentage shows how pricing strategy helps improve sales.
+- Brands with more products show stronger presence and better inventory strategy.
+- Category-wise distribution shows what sells the most.
+
+4. RECOMMENDATIONS:
+- Increase stock for top selling categories.
+- Provide more discounts on slow-moving brands.
+- Improve visibility for low-count categories.
+- Focus on the gender category that shows lower count to increase sales.
+
+Charts Saved:
+- brand_count_plot.png
+- category_count_plot.png
+- discount_distribution.png
