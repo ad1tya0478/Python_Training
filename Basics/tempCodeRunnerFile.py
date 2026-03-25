@@ -1,8 +1,9 @@
+string = input("Enter a string: ")
 
+result = ""
 
+for char in string:
+    if not char.isdigit():
+        result += char
 
-arr = np.array(([1,2,3],[4,5,6]))
-print("Shape: ", arr.shape)
-print("Dimension: ", arr.ndim)
-print("Size: ", arr.size)
-print("Dtatype: ", arr.dtype)
+print("Result:", result)
