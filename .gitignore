@@ -1,0 +1,21 @@
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution and packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# IDE files (optional but recommended)
+.idea/
+.vscode/
+*.swp   

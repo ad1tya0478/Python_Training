@@ -1,9 +1,13 @@
-string = input("Enter a string: ")
+print("Aditya Sharma\nBCAN1CA24013")
+a = input("Enter first number: ")
+b = input("Enter second number: ")
 
-result = ""
-
-for char in string:
-    if not char.isdigit():
-        result += char
-
-print("Result:", result)
+if not (a.lstrip('-').isdigit() and b.lstrip('-').isdigit()):
+    print("Invalid Number")
+else:
+    a = int(a)
+    b = int(b)
+    
+    print(a + b)
+    print(a - b)
+    print(a * b)
