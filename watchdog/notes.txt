@@ -1,0 +1,73 @@
+
+Event Driven programming and callbacks 
+
+    1. there are two ways to write a program 
+
+    Approach A - Constantly checking - your program repeatedly ask, "does this file exist" 
+
+    Approach B - Reacting to Events - Here u define a function that should run when the appropriate event is dispatched. like creattion. you dont repeatedly call it yourself, watchdog calls it. 
+    This is the core idea of event-driven programming: instead of continuously asking whether something happened, your program reacts when it receives notification that it happened.
+
+    2. What exaclty is a callback 
+    a callback is a function that u give to another piece of software so that it can call your function later. 
+
+    3. Follow one event through the system 
+
+        Step 1 - A file is created - An application creates test.txt
+        Step 2 - WatchDog receives a notification - Through the OS's file system mechanism
+        Step 3 - An event is dispatched - the event is delivered to the registered handler
+        Step 4 - Your callback runs - on_created(event) 
+
+    4. What is a thread ?
+        A thread is a sequence of execution within a process. Mutliple threads allow different parts of a program to make progress concurrently. 
+        WatchDog's Observer uses background threads for monitoring and event dispatch. The Precise backend and thread arrangement depend on the observer implementation. 
+
+
+Observer() - Creates an observer object that manages filesystem monitoring. 
+schedule() - Registers which directory to monitor and which handler recieves its events 
+start() - start the observer's background monitoring thread 
+is_alive() - Checks whether the observer thread is still running 
+join(1) - waits up to one second for that thread to finish
+stop() - requests that the observer stop monitoring
+join() - waits for the observer to finish shutting down 
+
+event - An event is a notification about filesystem activity, not a perfect record of what the user intended to do.
+
+
+Event Aggregation - Combines multiple events into a summary over a time window.
+
+Debouncing - waits until events for a particular item have been quiet for a specified period before triggering an action.
+Instead of immediately analysing the file three times, your program can schedule one analysis after the activity settles. However, this is not a guarantee that the file is completely finished. Some programs pause while writing, and ransomware may keep working continuously. Debouncing is a scheduling strategy, not proof that a file is stable.
+
+
+
+Rolling time windows - 
+    your detector should answer, how many files have been modified in the last two seconds ?
+    A rolling time window is period measured relative to the current time. Unlike fixed intervals such as 10:00:00 - 10:00:05, a rolling window continuously moves forward.
+
+    code - 
+    import time
+
+    last_modified = {}
+
+    def record_modification(path):
+        now = time.monotonic()
+        last_modified[path] = now
+
+    last_modified = {} - creates an empty dictionary
+    time.monotonic() gives u a clock suitable for measuring elapsed time. Unlike wall-clock time, it isnt affected by ordinary system clock adjustments. 
+    last_modified[path] = now records the most recent observation time for that path. 
+    if the same path appears again, its timestamp is updated rather than adding another entry.
+
+
+Concurrent Access - 
+    in my project 
+    - watchdog callback records a file modification in last_modified 
+    - worker thread  reads last_modified to count recently modified files
+    Both access the same directory
+
+    if they run concurrently, one might update the dictionary while the other is reading it. That can cause inconsistent results, or in some situations, runtime errors.
+
+    so we prevent this from happening using .lock().
+    the lock lets only one thread at a time enter the protected section. the other thread waits until the lock is released.
+    The reader must use the same lock when accessing the shared dictionary. 
